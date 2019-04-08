@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { todoAdd, todoToggle } from './actions';
+import { todoAdd, todoToggle, todoClear } from './actions';
 import Todos from './components/Todos';
 import './App.scss';
 
 
-const App = ({todos, todoAdd, todoToggle}) => {
+const App = ({todos, todoAdd, todoToggle, todoClear}) => {
   const handleAdd = (event) => {
     event.preventDefault();
     const task = event.target.task.value.trim();
@@ -17,7 +17,10 @@ const App = ({todos, todoAdd, todoToggle}) => {
   return (
     <div className="App">
       <h1>TODO</h1>
-      <Todos todos={todos} todoToggle={todoToggle} handleAdd={handleAdd}/>
+      <Todos todos={todos}
+             todoToggle={todoToggle}
+             handleAdd={handleAdd}
+             todoClear={todoClear} />
     </div>
   );
 };
@@ -28,4 +31,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { todoAdd, todoToggle })(App);
+export default connect(mapStateToProps, { todoAdd, todoToggle, todoClear })(App);
