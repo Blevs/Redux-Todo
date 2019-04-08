@@ -17,7 +17,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-  case TODO_ADD: {
+  case TODO_ADD: 
     return {
       ...state,
       todos: state.todos.concat({
@@ -25,12 +25,10 @@ export default (state = initialState, action) => {
         task: action.task,
         completed: false
       })};
-  }
-  case TODO_TOGGLE: {
+  case TODO_TOGGLE: 
     const todoIndex = state.todos.findIndex(({id}) => id === action.id);
     todoIndex >= 0 && (state.todos[todoIndex].completed = !state.todos[todoIndex].completed);
     return state;
-  }
   default:
     return state;
   }

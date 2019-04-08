@@ -10,7 +10,7 @@ export const todoAdd = (task) => {
 
 export const todoToggle = (id) => {
   return {
-    type: TODO_ADD,
+    type: TODO_TOGGLE,
     id: id
   };
 };
