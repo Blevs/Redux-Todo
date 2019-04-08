@@ -26,9 +26,13 @@ export default (state = initialState, action) => {
         completed: false
       })};
   case TODO_TOGGLE: 
-    const todoIndex = state.todos.findIndex(({id}) => id === action.id);
-    todoIndex >= 0 && (state.todos[todoIndex].completed = !state.todos[todoIndex].completed);
-    return state;
+    const todos = [...state.todos];
+    const todoIndex = todos.findIndex(({id}) => id === action.id);
+    todoIndex >= 0 && (todos[todoIndex].completed = !todos[todoIndex].completed);
+    return {
+      ...state,
+      todos: todos
+    };
   default:
     return state;
   }
