@@ -1,14 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { todoToggle } from './actions';
+import { todoAdd, todoToggle } from './actions';
+import Todos from './components/Todos';
 import './App.css';
 
 
-const App = ({todos, todoToggle}) => {
+const App = ({todos, todoAdd, todoToggle}) => {
+  const handleAdd = (event) => {
+    event.preventDefault();
+    todoAdd(event.target.task.value);
+  };
   return (
     <div className="App">
-      TODO
-      {todos.map(todo => <div key={todo.id} onClick={() => todoToggle(todo.id)}>{todo.task}</div>)}
+      <h1>
+        TODO
+      </h1>
+      <Todos todos={todos} todoToggle={todoToggle} handleAdd={handleAdd}/>
     </div>
   );
 };
@@ -19,4 +26,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { todoToggle })(App);
+export default connect(mapStateToProps, { todoAdd, todoToggle })(App);
