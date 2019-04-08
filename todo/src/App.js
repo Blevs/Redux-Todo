@@ -8,7 +8,11 @@ import './App.scss';
 const App = ({todos, todoAdd, todoToggle}) => {
   const handleAdd = (event) => {
     event.preventDefault();
-    todoAdd(event.target.task.value);
+    const task = event.target.task.value.trim();
+    if (task !== "") {
+      todoAdd(event.target.task.value);
+      event.target.task.value = "";
+    }
   };
   return (
     <div className="App">
