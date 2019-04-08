@@ -1,7 +1,18 @@
 import { TODO_ADD, TODO_TOGGLE } from '../actions';
 
 const initialState = {
-  todos: []
+  todos: [
+    {
+      id: 1,
+      task: "learn redux",
+      completed: false
+    },
+    {
+      id: 2,
+      task: "learn react",
+      completed: true
+    },
+  ]
 };
 
 export default (state = initialState, action) => {

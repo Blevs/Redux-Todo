@@ -7,6 +7,7 @@ const App = ({todos}) => {
   return (
     <div className="App">
       TODO
+      {todos.map(todo => <div key={todo.id}>{todo.task}</div>)}
     </div>
   );
 };
