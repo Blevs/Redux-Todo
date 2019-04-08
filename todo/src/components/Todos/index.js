@@ -1,6 +1,7 @@
 import React from 'react';
 import Todo from './Todo.js';
 import TodoForm from './TodoForm.js';
+import './Todos.scss';
 
 const Todos = ({todos, todoToggle, handleAdd}) => {
   return (

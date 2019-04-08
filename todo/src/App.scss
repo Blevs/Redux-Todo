@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import '/styles/variables.scss';
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+  background: $stainless;
+  min-height: 100vh;
+  h1 {
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-weight: black;
+    font-style: italic;
+    width: 100%;
+    font-size: 2.8rem;
+    margin: 0;
+    background: $white;
+    padding: 50px 0;
+    border-bottom: 2px solid lightgrey;
+    @media (max-width: 500px) {
+      padding: 20px 0;
+    }
+  }
+}

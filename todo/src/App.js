@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { todoAdd, todoToggle } from './actions';
 import Todos from './components/Todos';
-import './App.css';
+import './App.scss';
 
 
 const App = ({todos, todoAdd, todoToggle}) => {
@@ -12,9 +12,7 @@ const App = ({todos, todoAdd, todoToggle}) => {
   };
   return (
     <div className="App">
-      <h1>
-        TODO
-      </h1>
+      <h1>TODO</h1>
       <Todos todos={todos} todoToggle={todoToggle} handleAdd={handleAdd}/>
     </div>
   );
